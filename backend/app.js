@@ -85,6 +85,8 @@ app.delete('/goals/:id', async (req, res) => {
 
 mongoose.connect(
   'mongodb://localhost:27017/course-goals',
+  // for avoiding db connection error but it does not work from frontend app
+  'mongodb://host.docker.internal:27017/course-goals',
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
